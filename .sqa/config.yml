@@ -1,0 +1,64 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: release/2.1.1
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/rizac/sdaas:
+      branch: master
+      repo: https://github.com/rizac/sdaas.git
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/rizac/sdaas git:
+        commands:
+        - /usr/bin/env sh .sqa/script.wimpy-maroon-mandrill.sh
+        container: qc.acc_trippy-chartreuse-yak
+  QC.Doc:
+    repos:
+      github.com/rizac/sdaas find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.wheezy-razzmatazz-rattlesnake.sh
+        container: qc.doc_silly-olivine-fly
+      github.com/rizac/sdaas git:
+        commands:
+        - /usr/bin/env sh .sqa/script.snazzy-mustard-nightingale.sh
+        container: qc.doc_homey-persimmon-sheep
+      github.com/rizac/sdaas markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.sloppy-crimson-schnauzer.sh
+        container: qc.doc_nippy-auburn-uguisu
+  QC.Lic:
+    repos:
+      github.com/rizac/sdaas licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.cheeky-champagne-fousek.sh
+        container: qc.lic_bumpy-mustard-whale
+  QC.Sec:
+    repos:
+      github.com/rizac/sdaas bandit:
+        commands:
+        - /usr/bin/env sh .sqa/script.scanty-asparagus-mouse.sh
+        container: qc.sec_lousy-aquamarine-salamander
+  QC.Sty:
+    repos:
+      github.com/rizac/sdaas flake8:
+        commands:
+        - /usr/bin/env sh .sqa/script.shabby-cream-numbat.sh
+        container: qc.sty_gummy-tan-seahorse
+  QC.Uni:
+    repos:
+      github.com/rizac/sdaas pytest:
+        commands:
+        - /usr/bin/env sh .sqa/script.bluesy-saffron-peccary.sh
+        container: qc.uni_snazzy-cornflower-jaguar
+  QC.Ver:
+    repos:
+      github.com/rizac/sdaas get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.nippy-lemon-whippet.sh
+        container: qc.ver_lovely-saffron-moth
+timeout: 5400
