@@ -5,5 +5,5 @@
 
 (
 cd github.com/rizac/sdaas &&
-    mdl --json .
+    licensee detect . --confidence 60 --json 
 )

@@ -2,7 +2,7 @@ config:
   credentials: []
   project_repos:
     github.com/EOSC-synergy/sqaaas-tooling:
-      branch: release/2.1.1
+      branch: main
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     github.com/rizac/sdaas:
       branch: master
@@ -15,50 +15,50 @@ sqa_criteria:
     repos:
       github.com/rizac/sdaas git:
         commands:
-        - /usr/bin/env sh .sqa/script.wimpy-maroon-mandrill.sh
-        container: qc.acc_trippy-chartreuse-yak
+        - /usr/bin/env sh .sqa/script.cloudy-scarlet-camel.sh
+        container: qc.acc_grumpy-amaranth-sparrow
   QC.Doc:
     repos:
       github.com/rizac/sdaas find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.wheezy-razzmatazz-rattlesnake.sh
-        container: qc.doc_silly-olivine-fly
+        - /usr/bin/env sh .sqa/script.cloudy-platinum-chipmunk.sh
+        container: qc.doc_goopy-tangerine-numbat
       github.com/rizac/sdaas git:
         commands:
-        - /usr/bin/env sh .sqa/script.snazzy-mustard-nightingale.sh
-        container: qc.doc_homey-persimmon-sheep
+        - /usr/bin/env sh .sqa/script.ready-orange-mandrill.sh
+        container: qc.doc_bumpy-myrtle-chicken
       github.com/rizac/sdaas markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.sloppy-crimson-schnauzer.sh
-        container: qc.doc_nippy-auburn-uguisu
+        - /usr/bin/env sh .sqa/script.droopy-indigo-loon.sh
+        container: qc.doc_smelly-gold-quail
   QC.Lic:
     repos:
       github.com/rizac/sdaas licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.cheeky-champagne-fousek.sh
-        container: qc.lic_bumpy-mustard-whale
+        - /usr/bin/env sh .sqa/script.hazy-chartreuse-eagle.sh
+        container: qc.lic_gummy-emerald-starfish
   QC.Sec:
     repos:
       github.com/rizac/sdaas bandit:
         commands:
-        - /usr/bin/env sh .sqa/script.scanty-asparagus-mouse.sh
-        container: qc.sec_lousy-aquamarine-salamander
+        - /usr/bin/env sh .sqa/script.shabby-razzmatazz-quail.sh
+        container: qc.sec_scaly-firebrick-duck
   QC.Sty:
     repos:
       github.com/rizac/sdaas flake8:
         commands:
-        - /usr/bin/env sh .sqa/script.shabby-cream-numbat.sh
-        container: qc.sty_gummy-tan-seahorse
+        - /usr/bin/env sh .sqa/script.trippy-cerise-anteater.sh
+        container: qc.sty_skanky-taupe-lemming
   QC.Uni:
     repos:
       github.com/rizac/sdaas pytest:
         commands:
-        - /usr/bin/env sh .sqa/script.bluesy-saffron-peccary.sh
-        container: qc.uni_snazzy-cornflower-jaguar
+        - /usr/bin/env sh .sqa/script.geeky-beige-magpie.sh
+        container: qc.uni_shaky-chocolate-collie
   QC.Ver:
     repos:
       github.com/rizac/sdaas get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.nippy-lemon-whippet.sh
-        container: qc.ver_lovely-saffron-moth
+        - /usr/bin/env sh .sqa/script.homey-ochre-wildebeest.sh
+        container: qc.ver_sloppy-amethyst-bobcat
 timeout: 5400

@@ -5,5 +5,5 @@
 
 (
 cd github.com/rizac/sdaas &&
-    licensee detect . --confidence 60 --json
+    git rev-parse --is-inside-work-tree 
 )

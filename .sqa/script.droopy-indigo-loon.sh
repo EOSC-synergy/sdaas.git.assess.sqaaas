@@ -5,5 +5,5 @@
 
 (
 cd github.com/rizac/sdaas &&
-    git rev-parse --is-inside-work-tree
+    mdl --json  .
 )
